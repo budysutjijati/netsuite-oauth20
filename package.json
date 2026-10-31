@@ -1,0 +1,59 @@
+{
+  "name": "netsuite-oauth20",
+  "version": "0.2.0",
+  "description": "Zero-dependency OAuth 2.0 Client Credentials (M2M) client using JWT-bearer assertions (RFC 7523), with a thin NetSuite adapter",
+  "main": "src/index.js",
+  "types": "./types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./netsuite": {
+      "types": "./types/netsuite.d.ts",
+      "default": "./src/adapters/netsuite/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "node": ">=20.6"
+  },
+  "scripts": {
+    "example:netsuite": "node examples/netsuite-suiteql-smoke-test.js",
+    "example:netsuite:dotenv": "node --env-file=.env examples/netsuite-suiteql-smoke-test.js",
+    "setup:netsuite-cert": "node scripts/generate-netsuite-cert.js",
+    "prepack": "node scripts/readme-swap.js prepack",
+    "postpack": "node scripts/readme-swap.js postpack",
+    "test": "node --test test/"
+  },
+  "keywords": [
+    "oauth2",
+    "jwt-bearer",
+    "client-credentials",
+    "m2m",
+    "netsuite",
+    "rfc7523"
+  ],
+  "author": "Budy Sutjijati",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/budysutjijati/netsuite-oauth20.git"
+  },
+  "bugs": {
+    "url": "https://github.com/budysutjijati/netsuite-oauth20/issues"
+  },
+  "homepage": "https://github.com/budysutjijati/netsuite-oauth20#readme",
+  "dependencies": {},
+  "files": [
+    "src",
+    "types",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md",
+    "CHANGELOG.md",
+    ".env.example",
+    "docs",
+    "examples"
+  ]
+}
